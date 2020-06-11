@@ -11,4 +11,8 @@ app.use(getMovie);
 const addMovie = require("./endpoints/addMovie");
 app.use(addMovie);
 
+//get list of genres
+const genres = require("./endpoints/genres");
+app.use(genres);
+
 app.listen(port, () => console.log(`App listening on port ${port}`));
