@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs").promises;
 
-const databasePath = "./data/db.json";
+const { getMovies } = require("../data/db");
 
 router.get("/getmovie", async (req, res) => {
   try {
-    const rawMovieDatabase = await fs.readFile(databasePath);
-    const movieList = JSON.parse(rawMovieDatabase).movies;
-
+    const movieList = await getMovies();
     let requestedDuration = req.query.duration;
     let requestedGenres = req.query.genres;
     let responseData;
