@@ -69,9 +69,9 @@ router.post(
           runtime: req.body.runtime,
           genres: req.body.genres,
           directors: req.body.directors,
-          actors: req.body.actors ?? "",
-          plot: req.body.plot ?? "",
-          posterUrl: req.body.posterUrl ?? "",
+          actors: req.body.actors || "",
+          plot: req.body.plot || "",
+          posterUrl: req.body.posterUrl || "",
         })
       ) {
         res.json("success");
