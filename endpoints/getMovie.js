@@ -14,7 +14,11 @@ router.get("/getmovie", async (req, res) => {
       requestedGenres
     );
 
-    res.json(responseData);
+    if (responseData) {
+      res.json(responseData);
+    } else {
+      res.json({ error: "no movie matching given criteria found" });
+    }
   } catch (e) {
     console.error(e);
     res.status(500).send();
