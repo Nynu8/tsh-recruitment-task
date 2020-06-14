@@ -4,7 +4,8 @@
   "description": "Hey there!",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "author": "Adrian Szarnowski",
   "license": "ISC",
